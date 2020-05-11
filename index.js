@@ -19,7 +19,9 @@ app.get('/products', (req, res) => {
 
 app.get('/products/:id', (req, res) => {
     const productId = req.params.id;
-    res.send(products.get(productId));
+    const product = products.get(productId);
+    product.brandName = brands.get(product.brandId).name
+    res.send(product);
 })
 
 app.get('/brands/:id', (req, res) => {
