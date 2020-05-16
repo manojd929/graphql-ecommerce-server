@@ -1,31 +1,29 @@
-const express = require('express');
-const db = require('./database');
-const app = express();
+const express = require('express')
+const productsController = require('./controllers/products')
+const brandsController = require('./controllers/brands')
+
+const app = express()
 
 app.get('/products', (req, res) => {
-    const productList = db.products.list();
-    const modifiedProducctList = productList.map(product => {
-        product.brand = db.brands.get(product.brandId).name;
-        return product
-    })
-    res.send(modifiedProducctList);
-});
+    const productList = productsController.getProductsList(req)
+    res.send(productList)
+})
 
 app.get('/products/:id', (req, res) => {
-    let product = db.products.get(req.params.id);
-    product.brand = db.brands.get(product.brandId).name;
-    res.send(product);
-});
+    const productDetails = productsController.getProductDetails(req)
+    res.send(productDetails)
+})
 
 app.get('/brands', (req, res) => {
-    res.send(db.brands.list());
-});
+    const brandsList = brandsController.getBrandsList(req)
+    res.send(brandsList)
+})
 
 app.get('/brands/:id', (req, res) => {
-    res.send(db.brands.get(req.params.id));
-});
+    const brandDetails = brandsController.getBrandDetails(req)
+    res.send(brandDetails)
+})
 
 app.listen(9998, () => {
-    console.log('Server listenting successfully at 9998');
-});
-
+    console.log('Server listenting successfully at 9998')
+}) 

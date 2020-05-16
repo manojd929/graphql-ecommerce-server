@@ -4,69 +4,109 @@
         "name": "MacBook Air",
         "brandId": "5670",
         "description": "13-inch, 8GB RAM, 128GB Storage, 1.8GHz Intel Core i5 - Silver",
-        "availability": "5"
+        "availability": "5",
+        "price": {
+            "currency": "INR",
+            "value": "65990"
+        }
     },
     {
         "id": "9871",
         "name": "MacBook Pro",
         "brandId": "5670",
         "description": "15-inch, Latest Model, 16GB RAM, 512GB Storage, 2.3GHz Intel Core i9 - Silver",
-        "availability": "8"
+        "availability": "8",
+        "price": {
+            "currency": "INR",
+            "value": "189990"
+        }
     },
     {
         "id": "9872",
         "name": "iPad Pro",
         "brandId": "5670",
         "description": "11-inch, Wi-Fi, 64GB - Space Grey (1st Generation)",
-        "availability": "3"
+        "availability": "3",
+        "price": {
+            "currency": "INR",
+            "value": "120000"
+        }
     },
     {
         "id": "9873",
         "name": "iPad mini",
         "brandId": "5670",
         "description": "Wi-Fi + Cellular, 256GB - Space Grey",
-        "availability": "2"
+        "availability": "5",
+        "price": {
+            "currency": "INR",
+            "value": "59000"
+        }
     },
     {
         "id": "9877",
         "name": "Inspiron",
         "brandId": "5671",
         "description": "15.6-inch FHD Laptop (8th Gen Core i5-8265U/8GB/1TB/Window 10 + MS Office/2 GB AMD Graphics/Silver)",
-        "availability": "7"
+        "availability": "7",
+        "price": {
+            "currency": "INR",
+            "value": "65990"
+        }
     },
     {
         "id": "9878",
         "name": "Vostro 3480",
         "brandId": "5671",
         "description": "14-inch HD Thin & Light Laptop (Core i3 8th Gen/4GB/1TB HDD/Windows 10/Black/1.72kg)",
-        "availability": "8"
+        "availability": "8",
+        "price": {
+            "currency": "INR",
+            "value": "29490"
+        }
     },
     {
         "id": "9874",
         "name": "Ideapad S145",
         "brandId": "5672",
         "description": "AMD A6-9225 15.6 inch HD Thin and Light Laptop (4GB/1TB/Windows 10/Grey/1.85Kg)",
-        "availability": "8"
+        "availability": "8",
+        "price": {
+            "currency": "INR",
+            "value": "35000"
+        }
     },
     {
         "id": "9875",
         "name": "Legion Y540",
         "brandId": "5672",
         "description": "9th Gen Intel Core i5 15.6 inch FHD Gaming Laptop (8GB/512GB SSD/NVIDIA GTX 1650 4GB Graphics/Windows 10/Black/2.3Kg)",
-        "availability": "7"
+        "availability": "7",
+        "price": {
+            "currency": "INR",
+            "value": "61000"
+        }
     },
     {
         "id": "9876",
         "name": "Yoga 520",
         "brandId": "5672",
         "description": "Intel I3 8th Gen 14-inch FHD 2-in-1 Touchscreen Laptop ( 4GB RAM / 1TB HDD / Windows 10 Home )",
-        "availability": "5"
+        "availability": "5",
+        "price": {
+            "currency": "INR",
+            "value": "41000"
+        }
     },
     {
         "id": "9879",
         "name": "MSI GE62",
         "brandId": "5673",
         "description": "2QD Apache Pro Laptop with White Backlight (GTX 960 m, 2GB GDDR5, Multicolour)",
-        "availability": "2"
+        "availability": "2",
+        "price": {
+            "currency": "INR",
+            "value": "81000"
+        }
     }
 ]
