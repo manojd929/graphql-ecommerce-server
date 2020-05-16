@@ -6,29 +6,38 @@ const supportedSortParameters = ['price', 'availability', 'name']
 const getProductsList = (req) => {
     try {
         let items = db.products.list()
-        // Handle Filters
+        items = items.map(item => {
+            item.brandName = db.brands.get(item.brandId).name
+            return item
+        })
+
+        // Handle filters
         if (req.query.brand) {
-            const brandsList = db.brands.list()
-            const brandDetails = brandsList.filter((brand) => brand.name === req.query.brand)[0]
-            if (!brandDetails) {
-                throw new Error('No product with the specified brand are available')
-            }
             items = items.filter(item => {
-                console.log(item.brandId, brandDetails.id)
-                return item.brandId === brandDetails.id
+                return item.brandName === req.query.brand
             })
         }
 
-        // Handle sorting
+        // Handle Sorting
         const sortParameter = req.query.sort
         if (sortParameter && supportedSortParameters.includes(sortParameter)) {
-            items.sort((a, b) => {
+            items.sort((itemA, itemB) => {
                 if (sortParameter === 'price') {
-                    return a.price.value - b.price.value
+                    return itemA.price.value - itemB.price.value
                 }
-                return a[sortParameter] - b[sortParameter]
-            });
+                if  (sortParameter === 'name') {
+                    if (itemA.name.toUpperCase() < itemB.name.toUpperCase()) {
+                        return -1;
+                    }
+                    if (itemA.name.toUpperCase() > itemB.name.toUpperCase()) {
+                        return 1;
+                    }
+                    return 0
+                }
+                return itemA[sortParameter] - itemB[sortParameter]
+            })
         }
+
         return items
     } catch (err) {
         return getErrorMessage(err.message)
@@ -38,9 +47,9 @@ const getProductsList = (req) => {
 const getProductDetails = (req) => {
     try {
         const productId = req.params.id
-        let productDetails = db.products.get(productId)
+        const productDetails = db.products.get(productId)
         if (!productDetails) {
-            throw new Error('Product details not found')
+            throw new Error('Product not found')
         }
         let brandDetails = db.brands.list(productDetails.brandId)
         productDetails.brandName = brandDetails ? brandDetails.name : null
@@ -49,7 +58,8 @@ const getProductDetails = (req) => {
         return getErrorMessage(err.message)
     }
 }
+
 module.exports = {
     getProductsList,
     getProductDetails
-}  
+}
