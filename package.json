@@ -1,0 +1,24 @@
+{
+  "name": "graphql-ecommerce-server",
+  "version": "1.0.0",
+  "description": "GraphQL Tutorial",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --ignore data/ index.js"
+  },
+  "keywords": [
+    "graphql",
+    "notarealdb",
+    "restapi",
+    "express"
+  ],
+  "author": "manojd929",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "notarealdb": "^0.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
