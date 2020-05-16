@@ -1,14 +1,16 @@
 {
-  "name": "graphql-ecommerce-demo",
+  "name": "graphql-ecommerce-server",
   "version": "1.0.0",
-  "description": "tutorial for building graphql server ",
+  "description": "GraphQL Tutorial",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --ignore data/ index.js"
   },
   "keywords": [
     "graphql",
-    "apollo"
+    "notarealdb",
+    "restapi",
+    "express"
   ],
   "author": "manojd929",
   "license": "ISC",
