@@ -1,4 +1,4 @@
-const db = require('../database')
+const db = require('../../database')
 const getErrorMessage = require('../utils/getErrorMessage')
 
 const supportedSortParameters = ['price', 'availability', 'name']
