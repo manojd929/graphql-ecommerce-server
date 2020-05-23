@@ -1,0 +1,31 @@
+type Query  {
+    getProductsList(sort: String, filter: String): [Product!]!,
+    getProductDetails(id: String!): Product!,
+    getBrandsList: [Brand!]!,
+    getBrandDetails(id: String!): Brand!
+}
+
+type Mutation {
+    createBrand(name: String!): Brand!
+}
+
+type Product {
+    id: String!,
+    name: String!,
+    description: String,
+    availability: Int!,
+    brandId: String!,
+    brandName: String!
+    price: Price
+}
+
+type Price {
+    currency: String!,
+    value: Int!
+}
+
+type Brand {
+    id: String!
+    name: String!
+    productsList: [Product!]!
+}

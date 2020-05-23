@@ -4,7 +4,7 @@
   "description": "GraphQL Tutorial",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --ignore data/ index.js"
+    "start": "nodemon --ignore data/ server.js"
   },
   "keywords": [
     "graphql",

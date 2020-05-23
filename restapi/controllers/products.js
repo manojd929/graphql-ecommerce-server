@@ -1,5 +1,5 @@
 const db = require('../database')
-const getErrorMessage = require('../utils/getErrorMessage')
+const getErrorMessage = require('../restapi/utils/getErrorMessage')
 
 const supportedSortParameters = ['price', 'availability', 'name']
 
